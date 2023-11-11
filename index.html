@@ -27,26 +27,25 @@
               quantidade: 1,
             });
           } else {
-            produtosArray[posicao].quantidade++
+            produtosArray[posicao].quantidade++;
           }
         }
       });
       console.log(produtosArray);
 
-    const totais = {
+      const totais = {
         valorTotal: 0, // Valor total da venda
         valorTotalDesconto: 0, // Valor total com desconto
         quantidadeDeProdutos: 0, // Quantidade de produtos na venda
-    }
+      };
 
-    produtosArray.forEach((produto) => {
-        const valorBruto = produto.valor * produto.quantidade
-        totais.valorTotal += valorBruto
-        totais.valorTotalDesconto += (100 - produto.cupom) * valorBruto / 100
-        totais.quantidadeDeProdutos += produto.quantidade
-    })
-    console.log(totais)
-
+      produtosArray.forEach((produto) => {
+        const valorBruto = produto.valor * produto.quantidade;
+        totais.valorTotal += valorBruto;
+        totais.valorTotalDesconto += ((100 - produto.cupom) * valorBruto) / 100;
+        totais.quantidadeDeProdutos += produto.quantidade;
+      });
+      console.log(totais);
     </script>
   </body>
 </html>
